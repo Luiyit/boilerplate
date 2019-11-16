@@ -3,5 +3,9 @@
 @import './normalize';
 @import './global';
 
+// Components
+@import './components/header.scss';
+@import './components/footer.scss';
+
 // Pages
 @import './pages/hello';

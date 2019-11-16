@@ -2,12 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
 const image = require('gulp-image');
 const del = require('del');
-const nunjucks = require('gulp-nunjucks');
-const njkRender = require('gulp-nunjucks-render');
-const prettify = require('gulp-html-prettify');
+
 var csso = require('gulp-csso');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
@@ -22,7 +19,7 @@ var sassOptions = {
 };
 
 var autoprefixerOptions = {
-  browsers: ['last 3 versions', 'IE 9', 'IE 10', 'IE 11']
+    Browserslist: ['last 3 versions', 'IE 9', 'IE 10', 'IE 11']
 };
 
 gulp.task('icons', function() {

@@ -1,10 +1,19 @@
 {% if menu %}
-	<ul>
-	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'items': item.children} %}
-		</li>
-	{% endfor %}
+	<ul class={{ className }}>
+    	{% for item in items %}
+    		<li class="{{ item.classes | join(' ') }}">
+    			{% if not item.children %}
+    				<a class="{{ itemClass }}" target="{{ item.target }}" href="{{ item.link }}" data-title="{{ item.title|lower }}">
+							{{ item.title }}
+						</a>
+    			{% else %}
+    				<span class="link upper size-menu">{{ item.title }}</span>
+    			{% endif %}
+    		
+    			{% if item.children %}
+    				{% include "menu.twig" with {'items': item.children, className: ""} %}
+    			{% endif %}
+    		</li>
+    	{% endfor %}
 	</ul>
 {% endif %}

@@ -165,3 +165,30 @@ class StarterSite extends Timber\Site {
 }
 
 new StarterSite();
+
+
+function enqueue_css() {
+	wp_enqueue_style( 
+		'theme-css', 
+		get_template_directory_uri().'/public/css/app.css'
+	);
+}
+
+add_action( 'wp_enqueue_scripts', 'enqueue_css' );
+
+function enqueue_js() { 
+	// wp_enqueue_script(
+	// 	'vonsite-js', 
+	// 	get_template_directory_uri().'/sass-boilerplate/public/assets/js/main.js', 
+	// 	array('jquery', 'slick'), 
+	// 	1.0, 
+	// 	true
+	// );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_js' );
+
+function add_svg_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'add_svg_mime_types');

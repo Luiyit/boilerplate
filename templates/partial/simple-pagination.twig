@@ -1,0 +1,20 @@
+{% if posts.pagination.pages is not empty %}
+    <nav class="pagination-block">
+        <ul class="pagination align-items-center justify-content-center">          
+
+            {# Previous #}
+            {% if pagination.prev %}
+                <li class="mx-2">
+                    <a class="btn-black upper" href="{{ pagination.prev.link }}">Newer Posts</a>
+                </li>
+            {% endif %}
+            
+            {# Next #}
+            {% if pagination.next %}
+                <li class="mx-2">
+                    <a class="btn-black upper" href="{{ pagination.next.link }}">Older Posts</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}

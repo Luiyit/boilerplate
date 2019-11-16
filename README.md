@@ -16,3 +16,6 @@ Simple skeleton to start a custom wordpress theme using Timber.
 # CSS packages included
 1. [Bootstrap](https://github.com/twbs/bootstrap). Only grid system. You can include more modules updating _vendor.scss file
 2. [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
+
+npm install --save-dev gulp@4.0.2
+npm install --save-dev gulp-image@5.1.0

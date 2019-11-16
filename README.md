@@ -19,3 +19,6 @@ Simple skeleton to start a custom wordpress theme using Timber.
 
 npm install --save-dev gulp@4.0.2
 npm install --save-dev gulp-image@5.1.0
+
+# Special thanks
+1. [How do I update to Gulp 4?](https://www.liquidlight.co.uk/blog/how-do-i-update-to-gulp-4/) 

@@ -1,11 +1,17 @@
 @import './variables';
 @import './vendor';
+@import './fonts';
 @import './normalize';
 @import './global';
+@import './util';
+@import './components';
 
-// Components
-@import './components/header.scss';
-@import './components/footer.scss';
+// Page parts
+@import './page_parts/partial.scss';
+@import './page_parts/menu.scss';
+@import './page_parts/header.scss';
+@import './page_parts/footer.scss';
 
 // Pages
-@import './pages/hello';
+@import './pages/home'; 
+ 

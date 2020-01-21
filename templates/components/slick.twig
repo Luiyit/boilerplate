@@ -1,0 +1,5 @@
+<div id="slick-{{ key }}">
+  {% for item in items %}
+    {% include slick_component with { item: item, params: params, loop_index: loop.index } %}
+  {% endfor %}
+</div>

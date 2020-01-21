@@ -1,4 +1,6 @@
 <?php
+include "theme_helpers.php";
+
 /**
  * Timber starter-theme
  * https://github.com/timber/starter-theme
@@ -177,13 +179,22 @@ function enqueue_css() {
 add_action( 'wp_enqueue_scripts', 'enqueue_css' );
 
 function enqueue_js() { 
-	// wp_enqueue_script(
-	// 	'vonsite-js', 
-	// 	get_template_directory_uri().'/sass-boilerplate/public/assets/js/main.js', 
-	// 	array('jquery', 'slick'), 
-	// 	1.0, 
-	// 	true
-	// );
+	wp_enqueue_script(
+		'slick', 
+		get_template_directory_uri().'/node_modules/slick-carousel/slick/slick.js', 
+		array(), 
+		1.8, 
+		true
+	);
+
+	wp_enqueue_script(
+		'main', 
+		get_template_directory_uri().'/public/js/main.js', 
+		array('jquery', 'slick'), 
+		1.0, 
+		true
+	);
+
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_js' );
 

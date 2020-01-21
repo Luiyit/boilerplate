@@ -1,4 +1,14 @@
+// import Slick module
+@import'../../../node_modules/slick-carousel/slick/slick.scss';
+@import'../../../node_modules/slick-carousel/slick/slick-theme.scss';
+
+// Overwrite bootstrap variables
+@import './bootstrap_variables';
+
+// Import bootstrp modules
 @import '../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@import '../../../node_modules/bootstrap/scss/_mixins.scss';
+@import '../../../node_modules/bootstrap/scss/_utilities.scss';
 
 // Font awesome
 @import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";

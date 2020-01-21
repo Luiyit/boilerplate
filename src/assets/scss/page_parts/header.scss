@@ -1,0 +1,26 @@
+header.header{
+  .header-box{
+    padding: $header-padding-y 0;
+  }
+
+  .bars-icon{
+    margin-right: 10px;
+  }
+
+  .logo-anchor{
+    padding: $logo-padding;
+    display: block;
+
+    .main-logo {
+      display: block;
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  .social-links.shop-menu{
+    float: right;
+  }
+}

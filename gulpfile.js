@@ -38,6 +38,14 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(output));
 });
 
+gulp.task('shopify-sass', function() {
+    return gulp
+        .src('./src/assets/scss/shopify.scss', { allowEmpty: true })
+        .pipe(sass(sassOptions).on('error', sass.logError))
+        .pipe(autoprefixer(autoprefixerOptions))
+        .pipe(gulp.dest(output));
+});
+
 gulp.task('sass:min', function() {
     return gulp
         .src(input)
@@ -48,6 +56,7 @@ gulp.task('sass:min', function() {
 });
 
 gulp.task('js', () => {
+    // return gulp.src(['node_modules/slick-carousel/slick/slick.js', './src/assets/js/main.js'])
     return gulp.src('./src/assets/js/main.js')
         .pipe(webpackStream(webpackConfig), webpack)
         .pipe(gulp.dest('./public/js'));
@@ -61,6 +70,10 @@ gulp.task('clean:image', function() {
     return del(['./public/img/**', '!public/img'], {force:true})
 });
 
+gulp.task('clean:font', function() {
+    return del(['./public/fonts/**', '!public/fonts'], {force:true})
+});
+
 gulp.task('image:prod', gulp.series(['clean:image'], function () {
     return gulp.src('./src/assets/img/**')
         .pipe(image())
@@ -72,6 +85,11 @@ gulp.task('image', gulp.series(['clean:image'], function () {
         .pipe(gulp.dest('./public/img'));
 }));
 
+gulp.task('font', gulp.series(['clean:font'], function () {
+    return gulp.src('./src/assets/fonts/**')
+        .pipe(gulp.dest('./public/fonts'));
+}));
+
 gulp.task('watch', function() {
   return gulp
     .watch(input, ['sass'])
@@ -80,11 +98,12 @@ gulp.task('watch', function() {
     });
 });
 
-gulp.task('serve', gulp.series(['icons', 'sass', 'image', 'js'], function() { 
-// gulp.task('serve', ['icons', 'sass', 'sass:min', 'js', 'js:watch'], function() {
+gulp.task('serve', gulp.series(['icons', 'sass', 'shopify-sass', 'image', 'font', 'js'], function() { 
+    gulp.watch("./src/assets/scss/**/*.scss", gulp.series(['shopify-sass']))
     gulp.watch("./src/assets/scss/**/*.scss", gulp.series(['sass']))
     gulp.watch("./src/assets/js/**/*.js",  gulp.series(['js']))
     gulp.watch("./src/assets/img/**", gulp.series(['image']))
+    gulp.watch("./src/assets/fonts/**", gulp.series(['font']))
 }));
 
 gulp.task('default', gulp.series('serve', function() { 

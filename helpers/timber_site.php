@@ -1,5 +1,4 @@
 <?php
-
 /**
  * We're going to configure our theme inside of a subclass of Timber\Site
  * You can move this to its own file and include here via php's include("MySite.php")
@@ -31,6 +30,11 @@ class StarterSite extends Timber\Site {
 	public function add_to_context( $context ) {
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
+
+		$context['settings']  = array(
+			'copyright' => get_theme_mod('copyright')
+		);
+		
 		return $context;
 	}
 

@@ -3,18 +3,63 @@
   border-width: 1px 0;
   border-style: solid;
   
-  .app-menu{
-    list-style: none;
-    text-align: center;
-    li{
+}
+.inline-menu{
+  list-style: none;
+  text-align: center;
+
+  li{
+    display: inline-block;
+    padding: 5px 0;
+    a{
       display: inline-block;
-      padding: 5px 0;
-      a{
-        display: inline-block;
-        text-transform: uppercase;
-        padding: 15px 20px;
-        font-size: 15px;
+      text-transform: uppercase;
+      padding: 15px 20px;
+      font-size: 15px;
+      
+      @include media-breakpoint-down(md){
+        padding: 10px;
+        font-size: 12px;
       }
-    }  
+    }
+  }  
+}
+
+/** Sticky menu */
+#sticky-container-sticky-wrapper{
+  opacity: 0;
+  z-index: 1000;
+  position: absolute;
+  -webkit-transition: opacity 500ms ease;
+  -moz-transition: opacity 500ms ease;
+  -o-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
+  width: 100%;
+  visibility: hidden;
+
+  &.is-sticky{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Id for main sticky container. Use it in toyu markup
+  #sticky-container{
+      background-color: white;
+      
+      &.sticky-on .nav-main .wrapper{
+          display: block!important;
+      }
+  }
+  
+}
+
+.admin-bar{
+  // Last WP vertion not fixed admin bar. No need padding on sticky
+  #sticky-container.enabled-admin-padding{
+      padding-top: 32px;
+
+      @media (max-width: 768px){
+          padding-top: 46px;
+      }
   }
 }

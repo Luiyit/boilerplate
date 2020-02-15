@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'FeltThat';
+  src: url('../fonts/FeltThat.eot?#iefix') format('embedded-opentype'),  url('../fonts/FeltThat.otf')  format('opentype'),
+         url('../fonts/FeltThat.woff') format('woff'), url('../fonts/FeltThat.ttf')  format('truetype'), url('../fonts/FeltThat.svg#FeltThat') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FjallaOne-Regular';
+  src: url('../fonts/FjallaOne-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/FjallaOne-Regular.woff') format('woff'), url('../fonts/FjallaOne-Regular.ttf')  format('truetype'), url('../fonts/FjallaOne-Regular.svg#FjallaOne-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.feltthat{
+  font-family: 'FeltThat';
+}
+
+.fjallaone{
+  font-family: 'FjallaOne-Regular';
+}

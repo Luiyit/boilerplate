@@ -6,7 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: #eee;
+    background-color: #fff;
     color: black;
     font-family: 'Lato';
 }
@@ -18,6 +18,10 @@ html {
 body { 
     min-height: 100vh;
     font-size: 18px;
+
+    @include media-breakpoint-down(md){
+        font-size: 14px;
+    }
 }
 
 ul, ol, h1, h2, h3, h4, h5, h6 {
@@ -34,24 +38,124 @@ a {
     color: inherit;
 }
 
+input{
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
+}
 .hidden {
     display: none;
 }
 
-.btn{
+.btn, button{
+    cursor: pointer;
     font-weight: 900;
     font-size: 15px;
-    
+    display: inline-block;
+    padding: 15px 40px;
+
+    &.btn-condensed{
+        padding: 15px 20px
+    }
+
     &.btn-white{
         background-color: white;
-        border: 2px solid black;
-        padding: 10px 20px;
+        &:not(.no-border){
+            border: 1px solid black;
+        }
     }
 
     &.btn-black{
         color: white;
         background-color: black;
-        border: 2px solid black;
-        padding: 10px 20px;
+        &:not(.no-border){
+            border: 1px solid black;
+        }
+    }
+
+    &.no-border{
+        border: 0 solid transparent;
+    }
+
+    @include media-breakpoint-down(md){
+        padding: 8px 20px;
+        font-size: 11px;
+    }
+}
+
+.black-bordered-form{
+    input:not([type="submit"]){
+        padding: 15px 20px;
+        border: 1px solid black;
+    }
+}
+
+.white-bordered-form{
+    input:not([type="submit"]){
+        padding: 15px 20px;
+        border: 1px solid white;
+    }
+}
+
+.transparent-inputs{
+    input:not([type="submit"]){
+        background-color: transparent;
+    }
+}
+
+.fullw-form{
+    input:not([type="submit"]){
+        width: 100%;
+    }
+}
+
+// Animated icon | swap icons
+@keyframes fadeInOut {
+    0%   {opacity: 1;}
+    25%  {opacity: 1;}
+    45%  {opacity: 0;}
+    55%  {opacity: 0;}
+    75%  {opacity: 1;}
+    100% {opacity: 1;}
+}
+@keyframes fadeOutIn {
+    0%   {opacity: 0;}
+    25%  {opacity: 0;}
+    45%  {opacity: 1;}
+    55%  {opacity: 1;}
+    75%  {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+.animated-svg-icon-container{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 5px;
+
+    .svg-icon{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        
+        &.icon {
+            opacity: 1;
+            animation-name: fadeInOut;
+        }
+        &.text {
+            opacity: 0;
+            animation-name: fadeOutIn;
+        }
+    }
+    &:nth-child(odd){
+        .svg-icon{
+            animation-delay: 3s;
+        }
     }
 }

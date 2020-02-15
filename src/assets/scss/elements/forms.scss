@@ -1,0 +1,23 @@
+// Form
+.black-bordered-form{
+  input:not([type="submit"]){
+      padding: 15px 20px;
+      border: 1px solid black;
+  }
+}
+.white-bordered-form{
+  input:not([type="submit"]){
+      padding: 15px 20px;
+      border: 1px solid white;
+  }
+}
+.transparent-inputs{
+  input:not([type="submit"]){
+      background-color: transparent;
+  }
+}
+.fullw-form{
+  input:not([type="submit"]){
+      width: 100%;
+  }
+}

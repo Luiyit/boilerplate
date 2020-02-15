@@ -99,7 +99,7 @@
 (function ($) {
 
   var stickyContainer = $("#sticky-container");
-  console.log(stickyContainer);
+
   stickyContainer.sticky({ topSpacing: 0 });
 
   stickyContainer.on('sticky-start', function () {

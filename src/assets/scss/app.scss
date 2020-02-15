@@ -6,6 +6,10 @@
 @import './util';
 @import './components';
 
+// Elements
+@import './elements/buttons.scss';
+@import './elements/forms.scss';
+
 // Page parts
 @import './page_parts/partial.scss';
 @import './page_parts/menu.scss';

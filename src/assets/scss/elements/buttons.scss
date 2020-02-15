@@ -1,0 +1,37 @@
+/* Buttons variables */
+$btn-py: 15px;
+$btn-px: 40px;
+
+.btn, button{
+  cursor: pointer;
+  display: inline-block;
+  padding: $btn-py $btn-px;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+
+  &.btn-condensed{
+      padding: ($btn-py/2) ($btn-px/2)
+  }
+
+  &.btn-white, &.btn-black:hover{
+      color: black;
+      background-color: white;
+      &:not(.no-border){
+          border: 1px solid black;
+      }
+  }
+
+  &.btn-black, &.btn-white:hover{
+      color: white;
+      background-color: black;
+      &:not(.no-border){
+          border: 1px solid black;
+      }
+  }
+
+  &.no-border{
+      border: 0 solid transparent;
+  }
+}

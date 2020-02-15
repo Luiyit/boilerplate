@@ -1,3 +1,5 @@
-<div class="contact-form">
-  FORM HERE
+<div class="contact-form-wrapper">
+  {% filter shortcodes %}
+    {{ shortcode }}
+  {% endfilter %}
 </div>

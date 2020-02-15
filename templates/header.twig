@@ -1,43 +1,21 @@
-<header class="header" >
-  <div class="container">
-    <div class="d-flex flex-nowrap justify-content-between align-items-center">
-      <div class="d-flex align-items-center justify-content-start">
-        <a href="#" class="bars-icon d-block d-md-none-o">
-          <i class="fas fa-bars"></i>
-        </a>
+<header class="header bg-black">
 
-        {# <a href="/"> #}
-          <img class="main-logo black" src="{{ site.theme.link }}/public/img/logo-black.svg" alt="">
-        {# </a> #}
-      </div>
-      <div class="d-none d-md-block">
-        <nav id="nav-main" class="nav-main" role="navigation">
-          {% include "menu.twig" with {'items': menu.get_items, className: "app-menu"} %}
-        </nav>
-      </div>
-    </div>
-  </div>
+  {# Top menu desktop #}
+  {% include "header-bars/main-top-desktop.twig" with { 'items': menu.get_items } %}
 
+  {# Top Menu Mobile #}
+  {% include "header-bars/main-top-mobile.twig" with { 'items': menu.get_items } %}
+  
   {# Sticky #}
-  <div id="sticky-container-off">
+  <div id="sticky-container" class="enabled-admin-padding">
     <nav id="nav-main" class="nav-main" role="navigation">
-      <div class="container" style="display: none;">
+      <div class="wrapper" style="display: none;">
 
         {# Sticky Desktop  #}
-        <div class="d-none d-md-block">
-          {% include "menu.twig" with {'items': menu.get_items, className: "app-menu"} %}
-        </div>
+        {% include "header-bars/sticky-desktop.twig" with { 'items': menu.get_items } %}
         
         {# Sticky Mobile  #}
-        <div class="d-flex d-md-none flex-nowrap justify-content-between align-items-center">
-          <a href="#" class="link d-block d-md-none">
-            <i class="fas fa-bars"></i>
-          </a>
-
-          <a href="/">
-            <img class="main-logo black" src="{{ site.theme.link }}/public/img/logo-black.svg" alt="VonSite">
-          </a>
-        </div>
+        {% include "header-bars/sticky-mobile.twig" with { 'items': menu.get_items } %}
       </div>
     </nav>
   </div>

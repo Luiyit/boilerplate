@@ -1,0 +1,6 @@
+<div class="fullw-background">
+  {% set position = top ? 'top' : ( bottom ? 'bottom' : '') %}
+  {% set classes = 'col-md-12 ' ~ offset %}
+
+  <div class="{{position}} col-bg" style="background-image: url('{{bg}}')"></div>
+</div>

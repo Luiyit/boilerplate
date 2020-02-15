@@ -1,8 +1,21 @@
 footer.footer{
-  
+  background-color: rgba(0,0,0,0.9);
+  .container{
+    @include media-breakpoint-down(lg){
+      max-width: 100%;
+    }
+  }
+
   .footer-box{
-    background-color: black;
-    padding: $footer-padding;
+    padding: $footer-padding 0;
+
+    @include media-breakpoint-down(md){
+      padding: $footer-padding/2 0;
+      
+      .footer-menu{
+        margin-bottom: 45px;  
+      }
+    }
   }
 
   .sphere-logo{

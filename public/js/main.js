@@ -94,8 +94,22 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-// Write Code Here
 
+
+(function ($) {
+
+  var stickyContainer = $("#sticky-container");
+  console.log(stickyContainer);
+  stickyContainer.sticky({ topSpacing: 0 });
+
+  stickyContainer.on('sticky-start', function () {
+    stickyContainer.addClass("sticky-on");
+  });
+
+  stickyContainer.on('sticky-end', function () {
+    stickyContainer.removeClass("sticky-on");
+  });
+})(jQuery);
 
 /***/ })
 

@@ -1,5 +1,6 @@
 // Menu bar variables
 $reduced-height: 66px;
+$reduced-logo-height: 66px;
 
 .menu-container{
   border-color: #373737;
@@ -69,7 +70,7 @@ $reduced-height: 66px;
   }
 
   .main-logo {
-    height: $reduced-height;
+    height: $reduced-logo-height;
     width: auto;
   }
 

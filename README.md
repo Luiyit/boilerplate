@@ -4,6 +4,7 @@ Simple skeleton to start a custom wordpress theme using Timber.
 # Helper packages
 1. [The Timber Starter Theme](https://github.com/timber/starter-theme)
 2. [Gulp sass simple boilerplate](https://github.com/Fedorrychkov/gulp-sass-simple-boilerplate)
+3. [TGM Plugin Activation](https://github.com/TGMPA/TGM-Plugin-Activation)
 
 # How to use
 1. Download the zip for this theme (or clone it) and move it to wp-content/themes in your WordPress installation.

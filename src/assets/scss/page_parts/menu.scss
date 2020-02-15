@@ -1,9 +1,13 @@
+// Menu bar variables
+$reduced-height: 66px;
+
 .menu-container{
   border-color: #373737;
   border-width: 1px 0;
   border-style: solid;
   
 }
+
 .inline-menu{
   list-style: none;
   text-align: center;
@@ -53,6 +57,32 @@
   
 }
 
+.menu-bar-reduced{
+  .shop-menu a, 
+  .mobile-bars-anchor{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $reduced-height;
+      height: $reduced-height;
+      border-left: 1px solid #d7d7d7;
+  }
+
+  .main-logo {
+    height: $reduced-height;
+    width: auto;
+  }
+
+  @include media-breakpoint-down(md) {
+    color: white;
+
+    .shop-menu a,
+    .mobile-bars-anchor {
+      border-left-width: 0px;
+    }
+  }
+}
+
 .admin-bar{
   // Last WP vertion not fixed admin bar. No need padding on sticky
   #sticky-container.enabled-admin-padding{
@@ -61,5 +91,11 @@
       @media (max-width: 768px){
           padding-top: 46px;
       }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #sticky-container {
+    background-color: black !important;
   }
 }

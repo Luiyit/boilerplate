@@ -7,17 +7,26 @@
       'title' => 'Theme setup'
     ));
 
-    // Add setting
-    $wp_customize->add_setting('copyright', array(
+    // Add settings
+    $wp_customize->add_setting('bt_copyright', array(
         'default' => 'All rights reserved',
         'type'    => 'theme_mod'
     ));
+    $wp_customize->add_setting('bt_ga_traking_id', array(
+      'default' => '',
+      'type'    => 'theme_mod'
+  ));
 
-    // Add control
-    $wp_customize->add_control('copyright', array(
+    // Add controls
+    $wp_customize->add_control('bt_copyright', array(
         'label'   => 'Copyright text',
         'section' => 'theme_setup',
         'type'    => 'text',
+    ));
+    $wp_customize->add_control('bt_ga_traking_id', array(
+      'label'   => 'Google Analytics Tracking ID',
+      'section' => 'theme_setup',
+      'type'    => 'text',
     ));
   }
   add_action('customize_register','my_customize_register');

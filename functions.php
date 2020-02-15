@@ -5,6 +5,7 @@ include "helpers/timber_site.php";
 include "helpers/filters.php";
 include "helpers/utils.php";
 include "helpers/customization.php";
+include "helpers/basic_actions.php";
 
 /** Create timber site */
 new StarterSite();

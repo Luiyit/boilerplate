@@ -32,7 +32,8 @@ class StarterSite extends Timber\Site {
 		$context['site']  = $this;
 
 		$context['settings']  = array(
-			'copyright' => get_theme_mod('copyright')
+			'copyright' => get_theme_mod('bt_copyright'),
+			'gaTrakingId' => get_theme_mod('bt_ga_traking_id')
 		);
 		
 		return $context;

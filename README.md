@@ -18,10 +18,5 @@ Simple skeleton to start a custom wordpress theme using Timber.
 3. [Sticky](https://github.com/garand/sticky)
 4. [Slick](https://github.com/kenwheeler/slick/)
 
-# Run gulp tasks
-1. Install all dependencies npm install
-2. Run npm start
-3. You can add own code into src directory
-
 # Special thanks
 1. [How do I update to Gulp 4?](https://www.liquidlight.co.uk/blog/how-do-i-update-to-gulp-4/) 

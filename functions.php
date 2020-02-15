@@ -1,4 +1,6 @@
 <?php
+include "inc/TGM-Plugin-Activation-develop/class-tgm-plugin-activation.php";
+include "helpers/theme_plugins.php";
 include "helpers/frontend_scripts.php";
 include "helpers/timber_setup.php";
 include "helpers/timber_site.php";

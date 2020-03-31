@@ -10,7 +10,7 @@ include "helpers/customization.php";
 include "helpers/basic_actions.php";
 
 /** Create timber site */
-new StarterSite();
+if (class_exists("StarterSite")) new StarterSite();
 
 /** Enqueue */
 add_action( 'wp_enqueue_scripts', 'enqueue_css' );

@@ -1,4 +1,7 @@
 <?php
+
+if(!class_exists("Timber\Site")) return;
+
 /**
  * We're going to configure our theme inside of a subclass of Timber\Site
  * You can move this to its own file and include here via php's include("MySite.php")

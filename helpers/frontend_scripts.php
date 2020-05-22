@@ -1,5 +1,7 @@
 <?php
 
+$cache_bust=1590184913284;
+
 function enqueue_js() { 
 	wp_enqueue_script(
 		'slick', 
@@ -51,7 +53,7 @@ function enqueue_js() {
 
 	wp_enqueue_script(
 		'main', 
-		get_template_directory_uri().'/public/js/main.js', 
+		get_template_directory_uri().'/public/js/main.js?ver='.$cache_bust, 
 		array('jquery', 'slick', 'sticky'), 
 		1.0, 
 		true
@@ -61,6 +63,6 @@ function enqueue_js() {
 function enqueue_css() {
 	wp_enqueue_style( 
 		'theme-css', 
-		get_template_directory_uri().'/public/css/app.css'
+		get_template_directory_uri().'/public/css/app.css?ver='.$cache_bust
 	);
 }

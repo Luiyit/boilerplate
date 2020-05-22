@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var replace = require('gulp-replace');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 const image = require('gulp-image');
@@ -89,6 +90,18 @@ gulp.task('font', gulp.series(['clean:font'], function () {
     return gulp.src('./src/assets/fonts/**')
         .pipe(gulp.dest('./public/fonts'));
 }));
+
+gulp.task("cache-bust", function() {
+    var cbString = new Date().getTime();
+    return gulp
+      .src(["helpers/frontend_scripts.php"])
+      .pipe(
+        replace(/cache_bust=\d+/g, function() {
+            return "cache_bust=" + cbString;
+        })
+    )
+    .pipe(gulp.dest("./helpers"));
+});
 
 gulp.task('watch', function() {
   return gulp

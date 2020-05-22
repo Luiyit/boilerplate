@@ -1,0 +1,18 @@
+<div class="accordion" id="{{ id }}-collapse">
+  {% for tab in tabs %}
+    <div class="card">
+      <div class="card-header" id="heading-{{ loop.index}}">
+        {% set collapsed = not showFirst or loop.index != 1 %}
+        <div class="{{ collapsed ? 'collapsed' : '' }}" type="button" data-toggle="collapse" data-target="#collapse-{{ loop.index }}" aria-expanded="{{ loop.index == 1 ? 'true' : 'false'}}" aria-controls="collapse-{{ loop.index }}">
+          {{ tab.title }}
+        </div>
+      </div>
+
+      <div id="collapse-{{ loop.index }}" class="collapse {{ not collapsed ? 'show' : ''}}" aria-labelledby="heading-{{ loop.index}}" data-parent="#{{ id }}-collapse">
+        <div class="card-body">
+          {{ tab.content }} 
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

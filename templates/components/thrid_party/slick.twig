@@ -1,4 +1,4 @@
-<div id="slick-{{ key }}">
+<div id="slick-{{ key }}" class="{{ className }}">
   {% for item in items %}
     {% include slick_component with { item: item, params: params, loop_index: loop.index } %}
   {% endfor %}

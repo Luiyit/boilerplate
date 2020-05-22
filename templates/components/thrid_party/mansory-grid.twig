@@ -1,0 +1,30 @@
+<div class="masonry-grid">
+  {% for item in items %}
+    <div class="grid-item">
+      <div class="grid-box">
+        <div class="item-box">
+          {% if item.link %}
+            <a href="{{ item.link }}">
+              <img src="{{ item.image }}" alt="{{ item.title }}">
+            </a>
+          {% endif %}
+
+          {% if not item.link and not disabled_lightbox %}
+            <a href="{{ item.image }}" data-lightbox="image-1" data-title="{{ item.title }}">
+              <img src="{{ item.image }}" alt="{{ item.title }}">
+            </a>
+          {% endif %}
+
+            {% if item.title or item.description %}
+              <div class="picture-info">
+                <strong>{{ item.title }}</strong>
+                {% if item.description %}
+                  <p class="size-medium mt-2 mb-0">{{ item.description }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

@@ -1,6 +1,5 @@
 <?php
-
-$cache_bust=1590184913284;
+$cache_bust=1590188522184;
 
 function enqueue_js() { 
 	wp_enqueue_script(

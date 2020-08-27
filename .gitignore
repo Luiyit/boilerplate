@@ -1,6 +1,2 @@
-vendor
-wp-content
 composer.lock
-build
 node_modules
-*.code-workspace

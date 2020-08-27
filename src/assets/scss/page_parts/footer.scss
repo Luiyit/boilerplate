@@ -1,5 +1,5 @@
 footer.footer{
-  background-color: rgba(0,0,0,0.9);
+  background-color: $secondary-color;
   .container{
     @include media-breakpoint-down(lg){
       max-width: 100%;
@@ -8,12 +8,33 @@ footer.footer{
 
   .footer-box{
     padding: $footer-padding 0;
+    .copyright{
+      p{ margin: 5px 0;}
+    }
 
+    .footer-logo-container{
+      img{
+        width: 100px;
+        height: auto;
+      }
+    }
+    
+    .line-group{
+      margin: 50px 0;
+      
+      .gold-gradiant-line{
+        margin: 5px 0;
+      }
+    }
+    
     @include media-breakpoint-down(md){
       padding: $footer-padding/2 0;
       
       .footer-menu{
         margin-bottom: 45px;  
+      }
+      .gold-gradiant-line{
+        margin: 30px 0;
       }
     }
   }
@@ -24,6 +45,5 @@ footer.footer{
   }
 
   .copyright{
-    margin: 40px 0 0 0;
   } 
 }

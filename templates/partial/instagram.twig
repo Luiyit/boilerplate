@@ -1,0 +1,19 @@
+<section class="instagram-section sr-slice-up {{ boxName }}">
+  <div class="container">
+    <div class="Title auto-py-100">
+      <div>
+        {% include 'components/bs_title.twig' with {title: data.title, size: "big"} %}
+      </div>
+      <a class="os-small-size underline" href="https://instagram.com/{{data.instagram_username}}">@{{ data.instagram_username }}</a>
+    </div>
+  </div>
+
+  {% filter shortcodes %}
+    <div class="d-none d-md-block">
+      [instagram-feed]
+    </div>
+    <div class="d-block d-md-none">
+      [instagram-feed num=2 cols=2]
+    </div>
+  {% endfilter %}
+</section>

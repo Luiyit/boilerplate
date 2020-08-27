@@ -1,0 +1,39 @@
+$base_colum_gutter: 15px;
+
+.contact-page{
+  .content{
+    padding-left: $base_colum_gutter * 2;
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+    }
+  }
+}
+.contact-images{
+  position: absolute;
+  width: 150%;
+  height: 100%;
+  right: 0;
+  padding-right: $base_colum_gutter * 3;
+  overflow: hidden;
+
+  .images{
+    img{
+      max-width: 100%;
+    }
+  }
+  .vertical-gold-gradiant-line {
+    position: absolute;
+    top: 0;
+    right: -1px;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}

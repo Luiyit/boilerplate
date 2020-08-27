@@ -1,4 +1,13 @@
 // Form
+.black-bottom-bordered-form{
+  textarea,
+  input:not([type="submit"]){
+      padding: 15px 20px;
+      border-width: 0;
+      border-bottom: 1px solid black;
+  }
+}
+
 .black-bordered-form{
   input:not([type="submit"]){
       padding: 15px 20px;
@@ -17,6 +26,7 @@
   }
 }
 .fullw-form{
+  textarea,
   input:not([type="submit"]){
       width: 100%;
   }

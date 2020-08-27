@@ -1,6 +1,7 @@
 header.header{
   .header-box{
     padding: $header-padding-y 0;
+    border-bottom: 2px solid $secondary;
   }
 
   .bars-icon{

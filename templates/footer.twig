@@ -1,7 +1,34 @@
 <footer id="footer" class="footer color-white {{ className }}">
   <div class="container">
     <div class="footer-box">
-      {{ settings.copyright }}
+      <div class="container">
+
+        
+        {# Address and email #}
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <div class="os-small-size text-center text-md-left mb-3 mb-md-0 sr-slice-right">
+            {{ contact.address }}
+          </div>
+          <div class="sr-slice-left">
+            <a class="os-small-size" href="https://instagram.com/{{instagram.instagram_username}}">@{{ instagram.instagram_username }}</a>
+          </div>
+        </div>
+
+        <div class="line-group">
+          <div class="gold-gradiant-line"></div>
+          <div class="gold-gradiant-line"></div>
+        </div>
+
+        {# Copyright and footer logo #}
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <div class="copyright os-small-size text-center text-md-left mb-3 mb-md-0 sr-slice-right">
+            {{ settings.copyright }}
+          </div>
+          <div class="footer-logo-container sr-slice-left">
+            <img class="" src="{{ site.theme.link }}/boilerplate/public/img/logo-square-gold.svg" alt="">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

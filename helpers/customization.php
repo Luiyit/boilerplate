@@ -21,7 +21,7 @@
     $wp_customize->add_control('bt_copyright', array(
         'label'   => 'Copyright text',
         'section' => 'theme_setup',
-        'type'    => 'text',
+        'type'    => 'textarea',
     ));
     $wp_customize->add_control('bt_ga_traking_id', array(
       'label'   => 'Google Analytics Tracking ID',

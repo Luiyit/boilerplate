@@ -1,0 +1,126 @@
+$about_content_md_padding: 70px;
+
+.gray-box{
+  position: relative;
+  
+  .content{
+    padding: $about_content_md_padding;
+    position: relative;
+    z-index: 10;
+  }
+
+  &.about-box{
+    margin-bottom: 70px;
+
+    .fullw-background{
+      position: absolute;
+      top: 0;
+      top: $about_content_md_padding;
+      right: $about_content_md_padding;
+    }
+  }
+
+  &.tags-box{
+    padding-bottom: 100px;
+
+    .fullw-background{
+      width: calc(100% + 210px);
+      top: 100px;
+      left: -($about_content_md_padding * 1.5);
+
+      @include media-breakpoint-down(md) {
+        top: 50px;
+      }
+    }
+  }
+}
+
+.single-image{
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-top: 70px;
+
+  @include media-breakpoint-up(md) {
+    #slick-simple-slider{
+      width: 150%;
+      height: 150%;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    height: auto;
+  }
+}
+
+.service-tabs{
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+
+  .nav-item{
+    width: 33%;
+    flex-shrink: 0;
+    position: relative;
+    text-align: center;
+
+    .nav-link{
+      text-decoration: none;
+      position: relative;
+      line-height: 100%;
+      padding: 5px 0;
+      display: inline-block;
+      border: 0;
+
+      i{
+        margin-left: 10px;
+      }
+      
+      @include media-breakpoint-down(lg){
+        font-size: 18px;
+      }
+
+      &.active{
+        .fa-chevron-up{display: none;}
+      }
+      &:not(.active){
+        .fa-chevron-down{display: none;}
+      }
+    }
+
+    .x-icon{
+      line-height: 26px;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+
+    &:first-child{
+      .nav-link{
+        margin-left: 0;
+      }
+    }
+    &:last-child{
+      .nav-link{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.tab-content{
+  padding: 0;
+  .tab-pane{
+    border: 1px solid black;
+    margin-top: 20px;
+    padding: 15px;
+    
+    @include media-breakpoint-up(md){
+      padding: 30px;
+      margin-top: 40px;
+      width: 33%;
+      &.tab-2{transform: translate(100%, 0);}
+      &.tab-3{transform: translate(200%, 0);}
+      &.tab-4{transform: translate(300%, 0);}
+    }
+  }
+}

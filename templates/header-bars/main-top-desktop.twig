@@ -1,21 +1,13 @@
 {# Top menu desktop #}
 <div class="main-top-desktop container d-none d-md-block">
   <div class="header-box">
-    <div class="row">
-      <div class="col-md-8 col-sm-12 align-self-center">
-        {% include "partial/social-links.twig" with { className: "sphere-white-icon" } %}
-      </div>
-      <div class="col-md-8 col-sm-12 align-self-center">
+    <div class="d-flex justify-content-between align-items-center">
         <a class="logo-anchor" href="/">
-          <img class="main-logo black" src="{{ site.theme.link }}/public/img/logo-black.svg" alt="">
+          <img class="main-logo black" src="{{ site.theme.link }}/boilerplate/public/img/logo-black.svg" alt="">
         </a>
-      </div>
-      <div class="col-md-8 col-sm-12 align-self-center">
-        {% include "partial/shop-links.twig" with { 'items': items } %}
-      </div>
+        <div class="menu-container">
+          {% include "menu.twig" with {'items': items, className: "inline-menu main-menu"} %}
+        </div>
     </div>
-  </div>
-  <div class="menu-container">
-    {% include "menu.twig" with {'items': items, className: "inline-menu main-menu"} %}
   </div>
 </div>

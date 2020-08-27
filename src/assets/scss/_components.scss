@@ -57,8 +57,9 @@
   }
 }
 
-// templates/components/third_party/slick.twig
+// templates/components/slick.twig
 $dot_size: 15px;
+
 .slick-slider{
   padding: 0 $arrow-size;
 
@@ -160,37 +161,19 @@ $dot_size: 15px;
 }
 
 // templates/components/instagram.twig
-.instagram-box {
+.instagram-box{
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   z-index: 0;
-  background-color: $dark-color;
+  background-color: $primary-color;
 }
 
 // templates/partial/contact-form.twig
-.contact-form-wrapper {
+.contact-form-wrapper{
   .wpcf7-form{
     >p{margin: 0;}
   }
-}
-
-// templates/components/third_party/mansory-grid.twig
-$grid_columns: 3;
-$item_width: 100 / $grid_columns;
-.masonry-grid {
-    .grid-item { width: $item_width*1%; }
-    .grid-box {
-        padding: 5px;
-        position: relative;
-        
-        .item-box {
-            position: relative;          
-            &.is-complete{
-            }
-        }
-    }
-    .grid-item--width2 { width: 40%; }
 }

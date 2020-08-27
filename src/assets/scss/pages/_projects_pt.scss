@@ -1,0 +1,132 @@
+.archive-projects{
+  background-color: $secondary-color;
+  color: white;
+  padding: 50px 0;
+}
+
+article{
+  .article-content{
+    position: relative;
+    .vertical-gold-gradiant-line{
+      position: absolute;
+      height: 50%;
+      top: 20%;
+      left: 0;
+      background-color: red;;
+    }
+
+    .main-quote{
+      width: 100%;
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+
+      @include media-breakpoint-down(sm){
+        position: relative;
+        bottom: 0;
+        margin-top: 30px;
+      }
+    }
+    
+    .content-image-container{
+      position: relative;
+      width: 100%;
+      padding-top: 76%;
+  
+      >.image{
+        position: absolute;
+        width: 115%;
+        top: 0;
+        left: -15%;
+        img{
+          width: 100%;
+        }
+      }
+  
+      @include media-breakpoint-down(md){
+        padding-top: 0;
+        >.image{
+          position: relative;
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+    .side-content-image-container{
+      position: relative;
+      width: 100%;
+      padding-top: 180%;
+  
+      >.image{
+        position: absolute;
+        width: 120%;
+        top: 0;
+        left: 0;
+        img{
+          width: 100%;
+        }
+      }
+  
+      @include media-breakpoint-down(md){
+        padding-top: 0;
+        >.image{
+          position: relative;
+          width: 100%;
+        }
+      }
+    }
+  
+    #slick-seconday-slider{
+      .slick-slide {
+        padding: 0 10px;
+      }
+    }
+  
+    .second-article-content{
+      img{
+        max-width: 100%;
+      }
+      .quote{
+        padding: 80px 0;
+      }
+      .mobile-quote{
+        padding-bottom: 40px;
+      }
+
+      .empty-quote{
+        width: 100%;
+        padding-top: 70%;
+      }
+    }
+  
+    .square-image-container{
+      position: relative;
+      width: 100%;
+      padding-top: 130%;
+  
+      >.image{
+        position: absolute;
+        z-index: 1;
+        width: 130%;
+        top: 0;
+        left: 0;
+        img{
+          width: 100%;
+        }
+      }
+  
+      @include media-breakpoint-down(md){
+        margin-top: 50%;
+      }
+      
+      @include media-breakpoint-down(sm){
+        margin-top: 0;
+        padding-top: 0;
+        >.image{
+          position: relative;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

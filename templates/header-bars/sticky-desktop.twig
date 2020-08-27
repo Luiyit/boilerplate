@@ -1,6 +1,9 @@
 {# Sticky Desktop  #}
-<div class="sticky-desktop menu-bar-reduced d-none d-md-flex justify-content-between align-items-center">
-  <div style="width: 66px; heigth: 66px;"></div>
-  {% include "menu.twig" with {'items': items, className: "inline-menu main-menu"} %}
-  {% include "partial/shop-links.twig" %}
+<div class="sticky-desktop menu-bar-reduced d-none d-md-flex justify-content-between align-items-center px-4 py-2">
+  <a class="logo-anchor" href="/">
+    <img class="main-logo black" src="{{ site.theme.link }}/boilerplate/public/img/logo-black.svg" alt="">
+  </a>
+  <div class="menu-container">
+    {% include "menu.twig" with {'items': items, className: "inline-menu main-menu"} %}
+  </div>
 </div>

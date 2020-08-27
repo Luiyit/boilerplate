@@ -31,7 +31,7 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['menu']  = new Timber\Menu();
+		$context['menu']  = new Timber\Menu("Main");
 		$context['site']  = $this;
 
 		$context['settings']  = array(

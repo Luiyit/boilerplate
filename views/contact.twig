@@ -1,0 +1,44 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="contact-page hidden-overflow" >
+		<div class="container auto-py-100">
+			<div class="row">
+				<div class="col-lg-6 relative">
+					<div class="contact-images">
+						<div class="images">
+							
+							<div class="sr-slice-right">
+								{% include 'components/slick.twig' with { 
+									key: "simple-slider", 
+									items: page.first_lateral_slider, 
+									slick_component: "sliders/fullscreen_image.twig",
+								} %}
+							</div>
+
+							<div class="sr-slice-right">
+								<div class="mr-0 mr-md-5">
+									{% include 'components/slick.twig' with { 
+										key: "simple-slider-2", 
+										items: page.second_lateral_slider, 
+										slick_component: "sliders/fullscreen_image.twig",
+									} %}
+								</div>
+							</div>
+							
+							{% for item in page.lateral_images %}
+								<img src="{{ item.image }}" alt="">
+							{% endfor %}
+						</div>
+						<div class="vertical-gold-gradiant-line"></div>
+					</div>
+				</div>
+				<div class="col-lg-18">
+					<div class="content sr-slice-left-2x-delay">
+						{{ post.content }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

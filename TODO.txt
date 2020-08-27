@@ -1,0 +1,6 @@
+Como tener un header y footer generico y poder sobreescribirlo desde el root
+
+Cambiar nombre a repo a algo Como: timber-core-base
+https://github.com/Luiyit/wp-timber-boilerplate
+
+Crear branch para la version 0.2.0 del boilerplate

@@ -8,6 +8,7 @@ include "helpers/filters.php";
 include "helpers/utils.php";
 include "helpers/customization.php";
 include "helpers/basic_actions.php";
+include "helpers/basic_shortcodes.php";
 
 /** Create timber site */
 if (class_exists("StarterSite")) new StarterSite();

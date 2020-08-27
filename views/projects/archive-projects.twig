@@ -1,0 +1,20 @@
+{# This file demonstrates using most of the index.twig template and modifying 
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "projects-index.twig" %}
+
+{% block content %}
+  <div class="container my-50 sr-slice-up">
+    {{ page.header_content }} 
+  </div>
+
+  <div class="archive-projects">
+    <div class="container">
+      <div class="text-center mb-4">{{page.title}}</div>
+      {{ parent() }}
+    </div>
+  </div>
+
+	{# Get In Touch #}
+	{% include 'partial/get_in_touch.twig' with {contact: contact} %}
+{% endblock %}

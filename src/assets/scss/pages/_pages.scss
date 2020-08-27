@@ -1,0 +1,12 @@
+.gold-gradiant-line{
+  height: 2px;
+  background: rgb(172,138,92);
+  background: linear-gradient(90deg, rgba(172,138,92,1) 0%, rgba(213,170,80,1) 50%, rgba(172,138,92,1) 100%); 
+}
+
+.vertical-gold-gradiant-line{
+  height: 100%;
+  width: 3px;
+  background: rgb(172,138,92);
+  background: linear-gradient(180deg, rgba(172,138,92,1) 0%, rgba(213,170,80,1) 50%, rgba(172,138,92,1) 100%); 
+}

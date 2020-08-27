@@ -1,0 +1,12 @@
+<div class="bs-big-title-size mt-4 sr-slice-up">
+  {# <span class="delay-400"> #}
+  {% for item in words %}
+    <span class="">
+      {% include 'components/bs_title.twig' with {title: item.text, className: "d-inline-block my-2 my-md-0"} %}
+      {% if words | length > loop.index %}
+        <span class="px-3 d-block d-md-inline-block"><strong class="d-none d-md-inline-block">x</strong></span>
+      {% endif %}
+    </span>
+  {% endfor %}
+  {# </span> #}
+</div>

@@ -1,4 +1,3 @@
-const MinifyPlugin = require('babel-minify-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -16,12 +15,12 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules)/,
                 loader: 'babel-loader',
-                query: {
-                    presets: [
-                        ['latest', { modules: true }],
-                        "stage-0",
-                    ],
-                },
+                // query: {
+                //     presets: [
+                //         ['latest', { modules: true }],
+                //         "stage-0",
+                //     ],
+                // },
             },
         ],
     },

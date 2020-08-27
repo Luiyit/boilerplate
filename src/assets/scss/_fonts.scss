@@ -1,27 +1,47 @@
 @font-face {
-  font-family: 'FeltThat';
-  src: url('../fonts/FeltThat.eot?#iefix') format('embedded-opentype'),  url('../fonts/FeltThat.otf')  format('opentype'),
-         url('../fonts/FeltThat.woff') format('woff'), url('../fonts/FeltThat.ttf')  format('truetype'), url('../fonts/FeltThat.svg#FeltThat') format('svg');
+  font-family: 'BetterSignature';
+  src: url('../fonts/BetterSignature.eot?#iefix') format('embedded-opentype'),  url('../fonts/BetterSignature.woff') format('woff'), url('../fonts/BetterSignature.ttf')  format('truetype'), url('BetterSignature.svg#BetterSignature') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'FjallaOne-Regular';
-  src: url('../fonts/FjallaOne-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/FjallaOne-Regular.woff') format('woff'), url('../fonts/FjallaOne-Regular.ttf')  format('truetype'), url('../fonts/FjallaOne-Regular.svg#FjallaOne-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+.better-signature-font{
+  font-family: 'BetterSignature';
 }
 
-.feltthat{
-  font-family: 'FeltThat';
-}
-
-.fjallaone{
-  font-family: 'FjallaOne-Regular';
-}
-
-.lato{
+.open-sans{
   // Added via html-header | Google font
-  font-family: 'Lato';
+  font-family: 'Open Sans', sans-serif;
+  
+  .os-small-size{
+    font-size: 14px;
+  }
+  .os-medium-size{
+    font-size: 16px;
+  }
+  .os-quote-size{
+    font-size: 25px;
+  }
 }
+
+.bs-medium-title-size{
+  font-size: 25px;
+  @include media-breakpoint-down(md){
+    font-size: 18px;
+  }
+}
+
+.bs-big-title-size{
+  font-size: 35px;
+  @include media-breakpoint-down(md){
+    font-size: 25px;
+  }
+
+  @include media-breakpoint-down(sm){
+    font-size: 16px;
+  }
+}
+
+.primary-color{color: $primary-color;}
+.secondary-color{color: $secondary-color;}
+.accent-color-1{color: $accent-color-1;}

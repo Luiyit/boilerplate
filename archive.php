@@ -15,7 +15,6 @@
  */
 
 $templates = array( 'archive.twig', 'index.twig' );
-
 $context = Timber::context();
 
 $context['title'] = 'Archive';
@@ -31,10 +30,26 @@ if ( is_day() ) {
 	$context['title'] = single_cat_title( '', false );
 	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
 } elseif ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
+	$context['title'] = false;
+	$context['type_title_name'] = get_post_type();
+	$context['post_type_title'] = post_type_archive_title('', false );
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
+
+	if($context['type_title_name'] == 'projects'){
+		$context['grid'] = array();
+
+		foreach ($context['posts'] as $key => $post) {
+			array_push($context['grid'], array(
+				'title' => $post->post_title,
+				'image' => get_the_post_thumbnail_url($post),
+				'link' => $post->link,
+			));
+		}
+	}
 }
 
+$context['page'] = get_fields_by_page_id(105);
+$context['instagram'] = get_fields_by_page_id(38);
+$context['contact'] = get_fields_by_page_id(30);
 $context['posts'] = new Timber\PostQuery();
-
 Timber::render( $templates, $context );

@@ -11,6 +11,9 @@
 
 $context         = Timber::context();
 $timber_post     = Timber::query_post();
+
+$context['instagram'] = get_fields_by_page_id(38);
+$context['contact'] = get_fields_by_page_id(30);
 $context['post'] = $timber_post;
 
 if ( post_password_required( $timber_post->ID ) ) {

@@ -1,0 +1,147 @@
+{% extends "base.twig" %}
+
+{% block content %}
+		<div class="content-wrapper hidden-overflow">
+			<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+
+				{# Main Slider #}
+				{% if page.fullscreen_slider | length > 0 %}
+					<div class="main-slider">
+						{% include 'components/slick.twig' with { 
+							key: "banner", 
+							items: page.fullscreen_slider, 
+							slick_component: "sliders/fullscreen_image.twig",
+							className: "big-dots bottom-dots"
+						} %}
+					</div>
+				{% endif %}
+				
+				<section class="article-content pt-5">
+					{# Project content  #}
+					<div class="container mb-0 mb-md-5">
+						<div class="row no-gutters">
+							<div class="col-md-16">
+								<div class="pr-0 pr-md-2 pr-lg-4">
+									<h1 class="article-h1 mb-5 color-secondary-color">{{ post.title }}</h1>
+									{% if post.content %}
+										<div class="article-body bg-primary-color auto-p-50 mb-4 mr-0 mr-md-5">
+											{{ post.content }}
+										</div>
+									{% endif %}
+									
+									{% if page.first_section_images | length > 0 %}
+										<div class="content-image-container mb-4">
+											<div class="image">
+												<img src="{{ page.first_section_images[0] }}" alt="">
+											</div>
+										</div>
+									{% endif %}
+								</div>								
+							</div>
+							<div class="col-md-8">
+									{% if post.content or page.first_section_images | length > 0 %}
+										<div class="vertical-gold-gradiant-line d-none d-md-block"></div>
+									{% endif %}
+									
+								<div class="pl-0 pl-md-4 pl-lg-5">
+									{% if page.first_section_images | length > 1 %}
+										<div class="side-content-image-container">
+											<div class="image">
+												<img src="{{ page.first_section_images[1] }}" alt="">
+											</div>
+										</div>
+									{% endif %}
+								</div>
+								
+								{% if page.quotes | length > 0 %}
+								{% set className = page.first_section_images | length == 0 ? 'ml-0 ml-md-5' : '' %}
+									<div class="main-quote">
+										<div class="color-secondary-color open-sans os-quote-size mr-5 {{ className }}"><strong>{{ page.quotes[0].text }}</strong></div>
+									</div>
+								{% endif %}
+								
+							</div>
+						</div>
+					</div>
+					{# ENd Project content #}
+
+					{# Secundary Slider #}
+					{% if page.secondary_slider | length > 0 %}
+						<section class="bg-primary-color auto-py-100 mt-5 mt-md-2">
+							<div class="container">
+								<div class="main-slider">
+									{% include 'components/slick.twig' with { 
+										key: "seconday-slider", 
+										items: page.secondary_slider, 
+										slick_component: "sliders/fullscreen_image.twig",
+										className: "big-dots black-dots bottom-dots-off"
+									} %}
+								</div>
+							</div>
+						</section>
+					{% endif %}
+					{# End Secundary Slider #}
+
+					{% if page.last_section_images | length > 0 or page.quotes | length > 1 %}
+						<section class="second-article-content auto-py-100">
+							<div class="container">
+
+								{# Mobile quote #}
+								{% if page.quotes | length > 1 %}
+									<div class="d-block d-lg-none">
+										<div class="mobile-quote">
+											<div class="color-secondary-color open-sans os-quote-size mr-5"><strong>{{ page.quotes[1].text }}</strong></div>
+										</div>
+									</div>
+								{% endif %}
+
+								<div class="row no-gutters">
+									<div class="col-md-8">
+
+										{# Desktop quote #}
+										<div class="d-none d-lg-block">
+											{% if page.quotes | length > 1 %}
+												<div class="quote">
+													<div class="color-secondary-color open-sans os-quote-size mr-5"><strong>{{ page.quotes[1].text }}</strong></div>
+												</div>
+											{% else %}
+												<div class="empty-quote"></div>
+											{% endif %}
+										</div>
+
+										{% if page.last_section_images | length > 0 %}
+											<div class="square-image-container">
+												<div class="image">
+													<img src="{{ page.last_section_images[0] }}" alt="">
+												</div>
+											</div>
+										{% endif %}
+
+									</div>
+									<div class="col-md-16">
+										{% if page.last_section_images | length > 1 %}
+											<div class="mt-4 mt-md-0">
+												<img src="{{ page.last_section_images[1] }}" alt="">
+											</div>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						</section>
+					{% endif %}
+
+					{% if page.final_fullscreen_image %}
+						<section class="fullscreen-image">
+							<img class="w-100p" src="{{ page.final_fullscreen_image }}" alt="">
+						</section>
+					{% endif %}
+
+				</section>
+
+			</article>
+		</div><!-- /content-wrapper -->
+
+	{# Get In Touch #}
+	{% include 'partial/get_in_touch.twig' with {contact: contact} %}
+{% endblock %}
+

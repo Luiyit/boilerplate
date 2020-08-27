@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="get-in-touch auto-py-100">
+    <div class="sr-slice-up">
+      <div class="mb-3">{{ contact.we_are_text }}</div>
+      {% include 'components/bs_title.twig' with {title: contact.title, size: "big"} %}
+      <div class="mt-4 mb-2">{{ contact.subtitle }}</div>
+      <a class="os-medium-size underline" href="mailto:{{ contact.contact_email}}" target="_blank">{{ contact.contact_email }}</a>
+    </div>
+  </div>
+</div>

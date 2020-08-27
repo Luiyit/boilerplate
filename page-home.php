@@ -14,6 +14,11 @@
  */
 $context          = Timber::context();
 $timber_post      = new Timber\Post();
+
 $context['posts'] = $timber_post;
+$context['banner'] = get_fields_by_page_id(9);
+$context['contact'] = get_fields_by_page_id(30);
+$context['instagram'] = get_fields_by_page_id(38);
+$context['page'] = get_fields_by_page_id(15);
 
 Timber::render($timber_post->post_name.'.twig', $context );

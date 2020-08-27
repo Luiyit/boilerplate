@@ -1,0 +1,55 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="about-page hidden-overflow" >
+	
+		{# About me #}
+		<div class="container auto-py-100">
+			<div class="row">
+				<div class="col-md-16">
+					
+					{# Main message #}
+					<div class="container auto-pb-100 sr-slice-right">
+						{{ page.main_message }}
+					</div>
+
+					<div class="gray-box about-box sr-slice-right">
+						<div class="content bg-primary-color">
+							{{ page.content }}
+						</div>
+						{% include 'components/fullw_background.twig' with {
+							bg: page.content_background,
+							position: 'top',
+						} %}
+					</div>
+				</div>
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-6">
+					<div class="single-image sr-slice-left-2x-delay">
+						{% include 'components/slick.twig' with { 
+							key: "simple-slider", 
+							items: page.lateral_images, 
+							slick_component: "sliders/fullscreen_image.twig",
+						} %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tag-mean">
+			<div class="container auto-py-50">
+				<div class="">
+					{% include "components/bootstrap_tabs.twig" with { 
+						tabs: page.services, 
+						className: "service", 
+						showFirst: false  
+					} %}
+				</div>
+			</div>
+		</div>
+		
+		{# Get In Touch #}
+		{% include 'partial/get_in_touch.twig' with {contact: contact} %}
+	</div>
+{% endblock %}

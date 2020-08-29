@@ -38,6 +38,16 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(output));
 });
 
+gulp.task('parent-sass', function() {
+    return gulp
+        .src('../assets/scss/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass(sassOptions).on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(autoprefixer(autoprefixerOptions))
+        .pipe(gulp.dest(output));
+});
+
 gulp.task('shopify-sass', function() {
     return gulp
         .src('./src/assets/scss/shopify.scss', { allowEmpty: true })
@@ -81,7 +91,7 @@ gulp.task('image:prod', gulp.series(['clean:image'], function () {
 }));
 
 gulp.task('image', gulp.series(['clean:image'], function () {
-    return gulp.src('./src/assets/img/**')
+    return gulp.src(['./src/assets/img/**', '../assets/img/**'])
         .pipe(gulp.dest('./public/img'));
 }));
 
@@ -98,12 +108,16 @@ gulp.task('watch', function() {
     });
 });
 
-gulp.task('serve', gulp.series(['icons', 'sass', 'shopify-sass', 'image', 'font', 'js'], function() { 
+gulp.task('serve', gulp.series(['icons', 'sass', 'parent-sass', 'shopify-sass', 'image', 'font', 'js'], function() { 
     gulp.watch("./src/assets/scss/**/*.scss", gulp.series(['shopify-sass']))
     gulp.watch("./src/assets/scss/**/*.scss", gulp.series(['sass']))
     gulp.watch("./src/assets/js/**/*.js",  gulp.series(['js']))
     gulp.watch("./src/assets/img/**", gulp.series(['image']))
     gulp.watch("./src/assets/fonts/**", gulp.series(['font']))
+    
+    // Parent listeners
+    gulp.watch("../assets/img/**", gulp.series(['image']))
+    gulp.watch("../assets/scss/**/*.scss", gulp.series(['parent-sass']))
 }));
 
 gulp.task('default', gulp.series('serve', function() { 

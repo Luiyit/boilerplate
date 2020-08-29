@@ -1,12 +1,24 @@
 @font-face {
+  font-family: 'PlayfairDisplay-Regular';
+  src: url('../fonts/playfair/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/playfair/PlayfairDisplay-Regular.woff') format('woff'), url('../fonts/playfair/PlayfairDisplay-Regular.ttf')  format('truetype'), url('../fonts/playfair/PlayfairDisplay-Regular.svg#PlayfairDisplay-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
   font-family: 'BetterSignature';
-  src: url('../fonts/BetterSignature.eot?#iefix') format('embedded-opentype'),  url('../fonts/BetterSignature.woff') format('woff'), url('../fonts/BetterSignature.ttf')  format('truetype'), url('BetterSignature.svg#BetterSignature') format('svg');
+  src: url('../fonts/better-signature/BetterSignature.eot?#iefix') format('embedded-opentype'),  url('../fonts/better-signature/BetterSignature.woff') format('woff'), url('../fonts/better-signature/BetterSignature.ttf')  format('truetype'), url('BetterSignature.svg#BetterSignature') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 .better-signature-font{
   font-family: 'BetterSignature';
+}
+
+.font-playfair{
+  font-family: 'PlayfairDisplay-Regular';
 }
 
 .open-sans{
@@ -19,8 +31,14 @@
   .os-medium-size{
     font-size: 16px;
   }
-  .os-quote-size{
-    font-size: 25px;
+  .os-regular-size{
+    font-size: 21px;
+  }
+  .os-large-size{
+    font-size: 28px;
+  }
+  .os-xlarge-size{
+    font-size: 35px;
   }
 }
 

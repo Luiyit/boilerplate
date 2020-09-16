@@ -96,7 +96,7 @@ gulp.task('image', gulp.series(['clean:image'], function () {
 }));
 
 gulp.task('font', gulp.series(['clean:font'], function () {
-    return gulp.src('./src/assets/fonts/**')
+    return gulp.src(['./src/assets/fonts/**', '../assets/fonts/**'])
         .pipe(gulp.dest('./public/fonts'));
 }));
 
@@ -118,6 +118,7 @@ gulp.task('serve', gulp.series(['icons', 'sass', 'parent-sass', 'shopify-sass', 
     // Parent listeners
     gulp.watch("../assets/img/**", gulp.series(['image']))
     gulp.watch("../assets/scss/**/*.scss", gulp.series(['parent-sass']))
+    gulp.watch("../assets/fonts/**", gulp.series(['font']))
 }));
 
 gulp.task('default', gulp.series('serve', function() { 

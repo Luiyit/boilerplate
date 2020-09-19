@@ -1,5 +1,6 @@
 footer.footer{
   background-color: $primary-color;
+  
   .container{
     @include media-breakpoint-down(lg){
       max-width: 100%;

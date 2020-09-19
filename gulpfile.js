@@ -117,7 +117,7 @@ gulp.task('serve', gulp.series(['icons', 'sass', 'parent-sass', 'shopify-sass', 
     
     // Parent listeners
     gulp.watch("../assets/img/**", gulp.series(['image']))
-    gulp.watch("../assets/scss/**/*.scss", gulp.series(['parent-sass']))
+    gulp.watch("../assets/scss/*.scss", gulp.series(['parent-sass']))
     gulp.watch("../assets/fonts/**", gulp.series(['font']))
 }));
 

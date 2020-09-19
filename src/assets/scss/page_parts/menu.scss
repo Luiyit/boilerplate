@@ -5,6 +5,7 @@ $reduced-logo-height: 30px;
 .inline-menu{
   list-style: none;
   text-align: center;
+  margin-bottom: 0;
 
   li{
     display: inline-block;
@@ -17,6 +18,7 @@ $reduced-logo-height: 30px;
       text-transform: uppercase;
       padding: 0 20px;
       font-size: 15px;
+      text-decoration: none;
       
       @include media-breakpoint-down(md){
         padding: 0 10px;
@@ -27,8 +29,8 @@ $reduced-logo-height: 30px;
     &:not(:last-child):after{
       content: "";
       position: absolute;
-      top: 0;
-      right: 0;
+      top: -4px;
+      right: -4px;
       display: block;
       height: 100%;
       width: 1px;

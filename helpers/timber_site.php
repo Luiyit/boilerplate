@@ -32,6 +32,8 @@ class StarterSite extends Timber\Site {
 	 */
 	public function add_to_context( $context ) {
 		$context['menu']  = new Timber\Menu("Main");
+		$context['footer_menu']  = new Timber\Menu("Footer");
+		$context['copyright_menu']  = new Timber\Menu("Copyright");
 		$context['site']  = $this;
 
 		$context['settings']  = array(

@@ -24,6 +24,11 @@ function add_theme_plugins(){
 			'required' => false,
 		),
 		array(
+			'name'     => 'Popup Maker – Popup Forms, Opt-ins & More',
+			'slug'     => 'popup-maker',
+			'required' => false,
+		),
+		array(
 			'name'     => 'MC4WP: Mailchimp for WordPress',
 			'slug'     => 'mailchimp-for-wp',
 			'required' => false,

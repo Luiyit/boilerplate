@@ -66,7 +66,7 @@ gulp.task('sass:min', function() {
 });
 
 gulp.task('js', () => {
-    // return gulp.src(['node_modules/slick-carousel/slick/slick.js', './src/assets/js/main.js'])
+    // El src para js es solo para escuchar. Los entry estan en webpack config
     return gulp.src('./src/assets/js/main.js')
         .pipe(webpackStream(webpackConfig), webpack)
         .pipe(gulp.dest('./public/js'));

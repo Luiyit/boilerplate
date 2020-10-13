@@ -119,6 +119,31 @@ const sliceLeft = {
     pauseOnHover: false,
   });
   
+  $('#slick-products').slick({
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  });
+  
   // Main slider
   $('#slick-seconday-slider').slick({
     dots: true,

@@ -110,6 +110,7 @@ const sliceLeft = {
   // Main slider
   $('#slick-banner').slick({
     dots: true,
+    dotsClass: 'slick-dots container',
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -128,6 +129,9 @@ const sliceLeft = {
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: false,
+    prevArrow: '<div class="light-prev"><div class="icon"></div></div>',
+    nextArrow: '<div class="light-next"><div class="icon"></div></div>',
+
     responsive: [
       {
         breakpoint: 992,

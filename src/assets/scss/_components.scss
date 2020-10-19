@@ -211,7 +211,40 @@ $dot_size: 15px;
   }
 }
 
+// Add those classes inside mailchimp form in wp admin
 .inline-form{
-  
+  display: flex;
+
+  input[type="submit"],
+  input:not([type="submit"]){
+    padding: 10px 20px;
+    border-width: 0;
+    margin: 0 5px;
+
+    &:focus, &:focus{
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  input:not([type="submit"]){
+    width: 100%;
+  }
+
+  input[type="submit"]{
+    cursor: pointer;
+  }
+
+  @include media-breakpoint-down(md){
+    &.column-mode-md{
+      overflow: auto;
+      flex-direction: column;
+
+      input{
+        margin: 5px 0;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
 }
 

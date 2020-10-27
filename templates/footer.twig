@@ -3,21 +3,20 @@
     <div class="footer-box">
       <div class="container">
 
-        
         {# Address and email #}
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-          <div class="os-small-size text-center text-md-left mb-3 mb-md-0 sr-slice-right">
-            {{ contact.address }}
+        {% if contact.address or instagram.instagram_usernam %}
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="os-small-size text-center text-md-left mb-3 mb-md-0 sr-slice-right">
+              {{ contact.address }}
+            </div>
+            <div class="sr-slice-left">
+              {% if instagram.instagram_username %}
+                <a class="os-small-size" href="https://instagram.com/{{instagram.instagram_username}}">@{{ instagram.instagram_username }}</a>
+              {% endif %}
+            </div>
           </div>
-          <div class="sr-slice-left">
-            <a class="os-small-size" href="https://instagram.com/{{instagram.instagram_username}}">@{{ instagram.instagram_username }}</a>
-          </div>
-        </div>
-
-        <div class="line-group">
-          <div class="gold-gradiant-line"></div>
-          <div class="gold-gradiant-line"></div>
-        </div>
+        {% endif %}
+        
 
         {# Copyright and footer logo #}
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">

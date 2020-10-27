@@ -1,5 +1,6 @@
 footer.footer{
-  background-color: $secondary-color;
+  background-color: $primary-color;
+  
   .container{
     @include media-breakpoint-down(lg){
       max-width: 100%;
@@ -14,7 +15,7 @@ footer.footer{
 
     .footer-logo-container{
       img{
-        width: 100px;
+        max-width: 100px;
         height: auto;
       }
     }

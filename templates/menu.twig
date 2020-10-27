@@ -1,5 +1,5 @@
 {% if menu %}
-	<ul class={{ className }}>
+	<ul class="{{ className }}">
     	{% for item in items %}
     		<li class="{{ item.classes | join(' ') }}">
     			{% if not item.children %}

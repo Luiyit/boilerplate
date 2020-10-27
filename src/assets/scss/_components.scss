@@ -61,13 +61,15 @@
 $dot_size: 15px;
 
 .slick-slider{
-  padding: 0 $arrow-size;
+  &:not([class*="dots"]){
+    padding: 0 $arrow-size;
+  }
 
   @include media-breakpoint-down(md){
     padding: 0 0;
   }
 
-  .prev, .next{
+  .prev, .next, .light-prev, .light-next{
     width: $arrow-size;
     height: $arrow-size;
     opacity: 0.9;
@@ -76,18 +78,36 @@ $dot_size: 15px;
     position: absolute;
     z-index: 10;
     top: 50%;
+    cursor: pointer;
+    // background-color: red;
 
     @include media-breakpoint-down(md){
       width: $arrow-size / 2;
       height: $arrow-size / 2;
-
-      top: calc(100vw / 2);
-      transform: translate(0, -50%);
     }
 
     &:hover{
       opacity: 1;
     }
+  }
+
+  .light-prev{
+    background-image: url("../img/line-left.svg");
+    left: 0;
+
+    // @include media-breakpoint-down(md){
+    //   left: 16px;
+    // }
+  }
+
+  .light-next{
+    background-image: url("../img/line-left.svg");
+    transform: rotate(180deg);
+    right: 0;
+
+    // @include media-breakpoint-down(md){
+    //   left: 16px;
+    // }
   }
 
   .prev{
@@ -152,11 +172,24 @@ $dot_size: 15px;
 
     &.bottom-dots{
       margin-bottom: 0;
+
       .slick-dots{
         bottom: 0;
         margin-bottom: 30px;
       }
     }
+
+    &.right-dots{
+      .slick-dots{
+        text-align: right;
+      }
+    }
+
+  }
+
+  .slick-dots.container{
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 }
 
@@ -177,3 +210,41 @@ $dot_size: 15px;
     >p{margin: 0;}
   }
 }
+
+// Add those classes inside mailchimp form in wp admin
+.inline-form{
+  display: flex;
+
+  input[type="submit"],
+  input:not([type="submit"]){
+    padding: 10px 20px;
+    border-width: 0;
+    margin: 0 5px;
+
+    &:focus, &:focus{
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  input:not([type="submit"]){
+    width: 100%;
+  }
+
+  input[type="submit"]{
+    cursor: pointer;
+  }
+
+  @include media-breakpoint-down(md){
+    &.column-mode-md{
+      overflow: auto;
+      flex-direction: column;
+
+      input{
+        margin: 5px 0;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+

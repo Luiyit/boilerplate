@@ -32,11 +32,17 @@ class StarterSite extends Timber\Site {
 	 */
 	public function add_to_context( $context ) {
 		$context['menu']  = new Timber\Menu("Main");
+		$context['footer_menu']  = new Timber\Menu("Footer");
+		$context['copyright_menu']  = new Timber\Menu("Copyright");
 		$context['site']  = $this;
 
 		$context['settings']  = array(
 			'copyright' => get_theme_mod('bt_copyright'),
-			'gaTrakingId' => get_theme_mod('bt_ga_traking_id')
+			'gaTrakingId' => get_theme_mod('bt_ga_traking_id'),
+			'instagramUrl' => get_theme_mod('bt_instagram'),
+			'facebookUrl' => get_theme_mod('bt_facebook'),
+			'twitterUrl' => get_theme_mod('bt_twitter'),
+			'youtubeUrl' => get_theme_mod('bt_youtube'),
 		);
 		
 		return $context;

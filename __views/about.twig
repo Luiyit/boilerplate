@@ -27,11 +27,11 @@
 				</div>
 				<div class="col-md-6">
 					<div class="single-image sr-slice-left-2x-delay">
-						{% include 'components/slick.twig' with { 
-							key: "simple-slider", 
-							items: page.lateral_images, 
-							slick_component: "sliders/fullscreen_image.twig",
-						} %}
+{% include 'components/slick.twig' with { 
+	key: "simple-slider", 
+	items: page.lateral_images, 
+	slick_component: "sliders/fullscreen_image.twig",
+} %}
 					</div>
 				</div>
 			</div>

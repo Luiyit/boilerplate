@@ -66,7 +66,7 @@ gulp.task('sass:min', function() {
 });
 
 gulp.task('js', () => {
-    // return gulp.src(['node_modules/slick-carousel/slick/slick.js', './src/assets/js/main.js'])
+    // El src para js es solo para escuchar. Los entry estan en webpack config
     return gulp.src('./src/assets/js/main.js')
         .pipe(webpackStream(webpackConfig), webpack)
         .pipe(gulp.dest('./public/js'));
@@ -96,7 +96,7 @@ gulp.task('image', gulp.series(['clean:image'], function () {
 }));
 
 gulp.task('font', gulp.series(['clean:font'], function () {
-    return gulp.src('./src/assets/fonts/**')
+    return gulp.src(['./src/assets/fonts/**', '../assets/fonts/**'])
         .pipe(gulp.dest('./public/fonts'));
 }));
 
@@ -117,7 +117,8 @@ gulp.task('serve', gulp.series(['icons', 'sass', 'parent-sass', 'shopify-sass', 
     
     // Parent listeners
     gulp.watch("../assets/img/**", gulp.series(['image']))
-    gulp.watch("../assets/scss/**/*.scss", gulp.series(['parent-sass']))
+    gulp.watch("../assets/scss/**", gulp.series(['parent-sass']))
+    gulp.watch("../assets/fonts/**", gulp.series(['font']))
 }));
 
 gulp.task('default', gulp.series('serve', function() { 

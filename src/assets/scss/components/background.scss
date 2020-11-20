@@ -1,0 +1,128 @@
+//
+.background-content{
+  position: relative;
+  .bg-box-content{
+    z-index: 10;
+    position: relative;
+    height: 100%;
+
+    .container, .container-off{
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    .box-content{
+      position: absolute;
+      width: 100%;
+      
+      &.position-bottom{
+        bottom: 0;
+      }
+
+      &.position-middle{
+        top: 50%;
+        transform: translate(0,-50%);
+      }
+      
+      &.position-left,
+      &.position-right{
+        top: 50%;
+        width: 50%;
+        transform: translate(0,-50%);
+      }
+
+      &.position-left{
+        left: 0;
+      }
+      &.position-right{
+        left: 50%;
+      }
+      
+      .box-wrapper{
+        position: relative;
+        
+        .inner-box{
+          padding: 20px 0;
+
+          .the-content{
+            position: relative;
+            z-index: 20;
+          }
+          
+          .bg-color{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+          }
+        }
+        
+      }
+
+      
+    }
+
+  }
+}
+
+// templates/components/half_background.twig
+.half-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  .col-bg {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    &.offset-md-12 {
+      background-position: left center;
+    }
+  }
+
+  @include media-breakpoint-down(md){
+    &.no-mobile-absolute{
+      position: relative;
+      background-position: center;
+    }
+  }
+}
+
+// templates/components/fullw_background.twig
+.fullw-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  .col-bg{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    
+    &.top, &.bottom{
+      height: 50%;
+    }
+    
+    &.top{top: 0}
+    &.bottom{bottom: 0}
+  }
+}

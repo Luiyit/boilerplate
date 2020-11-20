@@ -1,61 +1,13 @@
-// templates/components/half_background.twig
-.half-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+// import Slick module
+@import './components/forms';
+@import './components/text_block';
+@import './components/call_to_action';
+@import './components/image_content';
+@import './components/background';
+@import './components/product_box';
 
-  .col-bg {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right center;
 
-    &.offset-md-12 {
-      background-position: left center;
-    }
-  }
 
-  @include media-breakpoint-down(md){
-    &.no-mobile-absolute{
-      position: relative;
-      background-position: center;
-    }
-  }
-}
-
-// templates/components/fullw_background.twig
-.fullw-background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  .col-bg{
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    
-    &.top, &.bottom{
-      height: 50%;
-    }
-    
-    &.top{top: 0}
-    &.bottom{bottom: 0}
-  }
-}
 
 // templates/components/slick.twig
 $dot_size: 15px;
@@ -211,40 +163,5 @@ $dot_size: 15px;
   }
 }
 
-// Add those classes inside mailchimp form in wp admin
-.inline-form{
-  display: flex;
 
-  input[type="submit"],
-  input:not([type="submit"]){
-    padding: 10px 20px;
-    border-width: 0;
-    margin: 0 5px;
-
-    &:focus, &:focus{
-      outline: none;
-      box-shadow: none;
-    }
-  }
-  input:not([type="submit"]){
-    width: 100%;
-  }
-
-  input[type="submit"]{
-    cursor: pointer;
-  }
-
-  @include media-breakpoint-down(md){
-    &.column-mode-md{
-      overflow: auto;
-      flex-direction: column;
-
-      input{
-        margin: 5px 0;
-        display: block;
-        width: 100%;
-      }
-    }
-  }
-}
 

@@ -1,0 +1,21 @@
+<div class="mailchimp-block position-{{ props.content.content_position }}">
+  {% set vertical = props.content.content_position == 'bottom' or props.content.content_position == 'top' %}
+  {% set colClass = vertical ? 'col-24':'col-lg-12' %}
+  {% set rowClass = vertical ? '':'align-items-center' %}
+  {% set imgClass = vertical ? 'center':'' %}
+
+  <div class="row {{ rowClass }}">
+    {% set orderClass = props.content.content_position == 'right' ? 'order-last':'' %}
+    <div class="{{ colClass }} {{ orderClass }}">
+      {% include "mailchimp_form.twig" with { id: props.mailchimp_form_id } %}
+    </div>
+    
+    <div class="{{ colClass }}">
+      <div class="content text-{{ props.content.content_align}}">
+        {% include "text_block.twig" with {props: props.content.title } %}
+        <p>{{ props.content.description }}</p>
+      </div>
+    </div>
+    </div>
+
+</div>

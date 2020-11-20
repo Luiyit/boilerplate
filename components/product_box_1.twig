@@ -1,0 +1,49 @@
+<div class="product-box product-box-v1">
+  <div class="image-block">
+    {% if props.link_mode == 'link' %}
+      <a href={{props.product_link}} target="_self">
+    {% endif %}
+      <img src="{{ props.product_image }}" alt="{{ props.key_name }}">
+    {% if props.link_mode == 'link' %}
+      </a>
+    {% endif %}
+
+    {% if props.regular_price %}
+      <div class="price fz-normal ff-open-sans-bold">${{ props.regular_price }}</div>
+    {% endif %}
+  </div>
+  
+  <div class="content mt-3">
+    {% if props.category %}
+      <div div class="category ff-open-sans-light fz-extra-small">{{ props.category }}</div>
+    {% endif %}
+  
+    {# TODO: link component #}
+    {% if props.link_mode == 'link' %}
+      <a href={{props.product_link}} target="_self">
+    {% endif %}
+    
+      {% include "text_block.twig" with {props: props.title, className: "my-2" } %}
+
+    {% if props.link_mode == 'link' %}
+      </a>
+    {% endif %}
+
+    {% if props.description %}
+      <div class="desc ff-open-sans-regular fz-small">{{ props.description }}</div>
+    {% endif %}
+    
+    {% if props.rating %}
+      <div class="rating">
+        {% for i in 1..5 %}
+          {% if i <= props.rating %}
+            <img src="{{ site.theme.link }}/boilerplate/public/img/estrella_on.svg" alt="">
+          {% else %}
+            <img src="{{ site.theme.link }}/boilerplate/public/img/estrella_off.svg" alt="">    
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    
+  </div>
+</div>

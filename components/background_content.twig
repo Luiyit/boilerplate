@@ -1,0 +1,34 @@
+<div class="background-content" style="height: {{ props.height }};">
+  {% set count = props.images | length %}
+  {% if count == 1 %}
+    {% include "fullw_background.twig" with {bg: props.images[0]} %}
+  {% endif %}
+
+  {% if count == 2 %}
+    {% include "half_background.twig" with {bg: props.images[0]} %}
+    {% include "half_background.twig" with {bg: props.images[1], right: true} %}
+  {% endif %}
+
+  <div class="bg-box-content">
+    <div class="container{{ props.content.use_container? '':'-off'}} p-0">
+      <div class="box-content position-{{props.content.box_position}}">
+        <div class="box-wrapper" style="padding: {{props.content.box_gutters}}; position: relative;">
+          <div class="inner-box" style="position: relative;">
+            <div class="bg-color" style="background-color: {{ props.content.background_color }};"></div>
+            <div class="the-content" style="text-align: {{ props.content.text_align }}">
+              {% include "text_block.twig" with {props: props.content.title} %}
+
+              {% if props.content.call_to_action.label %}
+                {% include "call_to_action.twig" with {props: props.content.call_to_action} %}
+              {% endif %}
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  {{ images }}
+</div>

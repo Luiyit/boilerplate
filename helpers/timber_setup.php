@@ -55,7 +55,8 @@ Timber::$dirname = array(
 	'boilerplate/templates', 
 	'boilerplate/templates/header-bars', 
 	'boilerplate/views', 
-	'boilerplate/pages_templates'
+	'boilerplate/pages_templates',
+	'boilerplate/components',
 );
 
 /**

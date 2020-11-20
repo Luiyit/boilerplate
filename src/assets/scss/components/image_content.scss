@@ -1,0 +1,24 @@
+.image-content{
+  &.position-bottom, &.position-top{
+    .image{ 
+      text-align: center;
+    }
+  }
+  &.position-right{
+    .image{ 
+      text-align: left;
+    }
+  }
+  &.position-left{
+    .image{ 
+      text-align: right;
+    }
+  }
+
+  .image{
+    // text-align: center;
+    img{
+      max-width: 100%;
+    }
+  }
+}

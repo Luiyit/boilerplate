@@ -1,0 +1,6 @@
+<div class="text-block {{ className }}" style="color: {{ props.color }}; ">
+  {% set class = props.type == 'fixed' ? 'fz-' ~ props.font_size ~ ' ff-' ~ props.font_family : '' %}
+  <div class="type-{{ props.type }} {{ class }}">
+    {{ props.text}}
+  </div>
+</div>

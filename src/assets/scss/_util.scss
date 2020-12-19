@@ -19,6 +19,7 @@
 // Background colors
 .bg-black{background-color: black;}
 .bg-white{background-color: white;}
+.bg-pink{background-color: #E16295;}
 .bg-primary-color{background-color: $primary-color;}
 
 // Maxs and Mins
@@ -29,6 +30,7 @@
 
 // Text colos
 .color-white{color: white;}
+.color-gray{color: #666666;}
 .color-primary-color{color: $primary-color;}
 .color-secondary-color{color: $secondary-color;}
 
@@ -51,6 +53,15 @@
 .mb-100{margin-bottom: 100px;}
 .py-100{padding-top: 100px; padding-bottom: 100px;}
 .my-50{margin-top: 50px; margin-bottom: 50px;}
+
+.auto-py-50{
+  padding-top: 50px; 
+  padding-bottom: 50px;
+  @include media-breakpoint-down(md){
+    padding-top: 30px; 
+    padding-bottom: 30px;
+  }
+}
 
 .auto-py-80{
   padding-top: 80px; 
@@ -108,4 +119,8 @@
 div.white-underline{
   padding: 5px 15px;
   border-bottom: 1px solid white;
+}
+
+div.divider{
+  height: 3px;
 }

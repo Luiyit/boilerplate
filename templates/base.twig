@@ -23,10 +23,8 @@
 			{% endif %}
 		</section>
 
-		{#% block footer %}
-			<footer id="footer" class="footer">
-				{% include 'footer.twig' %}
-			</footer>
+		{% block footer %}
+			{% include 'footer.twig' %}
 			{{ function('wp_footer') }}
 		{% endblock %#}
 	</body>

@@ -1,0 +1,56 @@
+.mailchimp-form, .contact-form{
+  input[type="submit"],
+  input:not([type="submit"]){
+    padding: 10px 20px;
+    border-width: 0;
+    margin: 0 5px 20px 5px;
+
+    &:focus, &:focus{
+      outline: none;
+      box-shadow: none;
+    }
+
+    &.black-bordered{
+      border: 2px solid #000;
+    }
+  }
+
+  .block-form{
+    input:not([type="submit"]){
+      display: block;
+    }
+  }
+
+  // Messages
+  // TODO: falta caja de mensaje exitoso
+  .wpcf7 form.failed .wpcf7-response-output, .wpcf7 form.aborted .wpcf7-response-output,
+  .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output{
+    border: none;
+  }
+  
+  // Add those classes inside mailchimp form in wp admin
+  &.inline-form{
+    display: flex;
+
+    input:not([type="submit"]){
+      width: 100%;
+    }
+
+    input[type="submit"]{
+      cursor: pointer;
+    }
+
+    @include media-breakpoint-down(md){
+      &.column-mode-md{
+        overflow: auto;
+        flex-direction: column;
+
+        input{
+          margin: 5px 0;
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

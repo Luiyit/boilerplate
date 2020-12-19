@@ -1,73 +1,27 @@
-// templates/components/half_background.twig
-.half-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+// import Slick module
+@import './components/forms';
+@import './components/text_block';
+@import './components/call_to_action';
+@import './components/image_content';
+@import './components/background';
+@import './components/product_box';
 
-  .col-bg {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right center;
 
-    &.offset-md-12 {
-      background-position: left center;
-    }
-  }
 
-  @include media-breakpoint-down(md){
-    &.no-mobile-absolute{
-      position: relative;
-      background-position: center;
-    }
-  }
-}
-
-// templates/components/fullw_background.twig
-.fullw-background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-
-  .col-bg{
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    
-    &.top, &.bottom{
-      height: 50%;
-    }
-    
-    &.top{top: 0}
-    &.bottom{bottom: 0}
-  }
-}
 
 // templates/components/slick.twig
 $dot_size: 15px;
 
 .slick-slider{
-  padding: 0 $arrow-size;
+  &:not([class*="dots"]){
+    padding: 0 $arrow-size;
+  }
 
   @include media-breakpoint-down(md){
     padding: 0 0;
   }
 
-  .prev, .next{
+  .prev, .next, .light-prev, .light-next{
     width: $arrow-size;
     height: $arrow-size;
     opacity: 0.9;
@@ -76,18 +30,36 @@ $dot_size: 15px;
     position: absolute;
     z-index: 10;
     top: 50%;
+    cursor: pointer;
+    // background-color: red;
 
     @include media-breakpoint-down(md){
       width: $arrow-size / 2;
       height: $arrow-size / 2;
-
-      top: calc(100vw / 2);
-      transform: translate(0, -50%);
     }
 
     &:hover{
       opacity: 1;
     }
+  }
+
+  .light-prev{
+    background-image: url("../img/line-left.svg");
+    left: 0;
+
+    // @include media-breakpoint-down(md){
+    //   left: 16px;
+    // }
+  }
+
+  .light-next{
+    background-image: url("../img/line-left.svg");
+    transform: rotate(180deg);
+    right: 0;
+
+    // @include media-breakpoint-down(md){
+    //   left: 16px;
+    // }
   }
 
   .prev{
@@ -152,11 +124,24 @@ $dot_size: 15px;
 
     &.bottom-dots{
       margin-bottom: 0;
+
       .slick-dots{
         bottom: 0;
         margin-bottom: 30px;
       }
     }
+
+    &.right-dots{
+      .slick-dots{
+        text-align: right;
+      }
+    }
+
+  }
+
+  .slick-dots.container{
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 }
 
@@ -177,3 +162,6 @@ $dot_size: 15px;
     >p{margin: 0;}
   }
 }
+
+
+

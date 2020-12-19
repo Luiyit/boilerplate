@@ -5,6 +5,57 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'playfair_displaybold';
+  src: url('../fonts/playfair/playfairdisplay-bold-webfont.woff2') format('woff2'),
+       url('../fonts/playfair/playfairdisplay-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'playfair_displayblack';
+  src: url('../fonts/playfair/playfairdisplay-black-webfont.woff2') format('woff2'),
+       url('../fonts/playfair/playfairdisplay-black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+// Font classes for Text Block
+.ff-playfair-regular, .font-playfair{
+  font-family: 'PlayfairDisplay-Regular';
+  // line-height: 100%;
+}
+.ff-playfair-bold{
+  font-family: 'playfair_displaybold';
+  // line-height: 100%;
+}
+.ff-playfair-black{
+  font-family: 'playfair_displayblack';
+  // line-height: 100%;
+}
+
+.ff-playfair-regular, .font-playfair, .ff-playfair-bold, .ff-playfair-black {
+  &.fz-large{
+    font-size: 70px;
+  }
+  &.fz-medium{
+    font-size: 60px;
+  }
+  &.fz-semi-medium{
+    font-size: 53px;
+  }
+  &.fz-normal{
+    font-size: 37px;
+  }
+  &.fz-small{
+    font-size: 25px;
+  }
+}
+
+// =======
 
 @font-face {
   font-family: 'BetterSignature';
@@ -17,9 +68,10 @@
   font-family: 'BetterSignature';
 }
 
-.font-playfair{
-  font-family: 'PlayfairDisplay-Regular';
-}
+
+// ========
+
+
 
 .open-sans{
   // Added via html-header | Google font

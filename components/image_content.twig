@@ -1,0 +1,26 @@
+<div class="image-content position-{{ props.content.content_position }}">
+  {% set vertical = props.content.content_position == 'bottom' or props.content.content_position == 'top' %}
+  {% set colClass = vertical ? 'col-24':'col-md-12' %}
+  {% set rowClass = vertical ? '':'align-items-center' %}
+  {% set imgClass = vertical ? 'center':'' %}
+
+  <div class="row {{ rowClass }}">
+    <div class="{{ colClass }}">
+      <div class="image">
+        <img src="{{ props.image }}" alt="">
+      </div>
+    </div>
+    
+    <div class="{{ colClass }}">
+      <div class="content text-{{ props.content.content_align}}">
+        {% include "text_block.twig" with {props: props.content.title } %}
+        <p>{{ props.content.description }}</p>
+        
+        {% if props.content.call_to_action.label %}
+          {% include "call_to_action.twig" with {props: props.content.call_to_action} %}
+        {% endif %}
+      </div>
+    </div>
+    </div>
+
+</div>

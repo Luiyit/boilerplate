@@ -13,6 +13,7 @@
  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
  * plug-in, you can safely delete this block.
+ * 
  */
 $composer_autoload = __DIR__ . '../vendor/autoload.php';
 if ( file_exists( $composer_autoload ) ) {
@@ -23,6 +24,7 @@ if ( file_exists( $composer_autoload ) ) {
 /**
  * This ensures that Timber is loaded and available as a PHP class.
  * If not, it gives an error message to help direct developers on where to activate
+ * 
  */
 if ( ! class_exists( 'Timber' ) ) {
 
@@ -45,7 +47,17 @@ if ( ! class_exists( 'Timber' ) ) {
 /**
  * Sets the directories (inside your theme) to find .twig files
  */
-Timber::$dirname = array('base-elements', 'header-bars', 'pages', 'components', 'boilerplate/templates', 'boilerplate/views', );
+Timber::$dirname = array(
+	'base-elements', 
+	'header-bars', 
+	'pages', 
+	'components', 
+	'boilerplate/templates', 
+	'boilerplate/templates/header-bars', 
+	'boilerplate/views', 
+	'boilerplate/pages_templates',
+	'boilerplate/components',
+);
 
 /**
  * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?

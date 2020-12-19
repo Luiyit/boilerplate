@@ -51,6 +51,10 @@ a {
 p{
     margin: 0;
     padding: 10px 0;
+
+    &:empty {
+        padding:0
+    }
 }
 
 input{

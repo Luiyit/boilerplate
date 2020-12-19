@@ -1,20 +1,20 @@
 <header class="header">
 
   {# Top menu desktop #}
-  {% include "header-bars/main-top-desktop.twig" with { 'items': menu.get_items } %}
+  {% include "main-top-desktop.twig" with { 'items': menu.get_items } %}
 
   {# Top Menu Mobile #}
-  {% include "header-bars/main-top-mobile.twig" with { 'items': menu.get_items } %}
+  {% include "main-top-mobile.twig" with { 'items': menu.get_items } %}
   
   {# Sticky #}
   <div id="sticky-container" class="enabled-admin-padding">
     <nav id="nav-main" class="nav-main" role="navigation">
       <div class="wrapper" style="display: none;">
         {# Sticky Desktop  #}
-        {% include "header-bars/sticky-desktop.twig" with { 'items': menu.get_items } %}
+        {% include "sticky-desktop.twig" with { 'items': menu.get_items } %}
         
         {# Sticky Mobile  #}
-        {% include "header-bars/sticky-mobile.twig" with { 'items': menu.get_items } %}
+        {% include "sticky-mobile.twig" with { 'items': menu.get_items } %}
       </div>
     </nav>
   </div>

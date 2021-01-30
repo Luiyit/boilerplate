@@ -174,6 +174,19 @@ const sliceLeft = {
     ]
   });
 
+  $('#slick-community').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
+    prevArrow: '<div class="light-prev"><div class="icon"></div></div>',
+    nextArrow: '<div class="light-next"><div class="icon"></div></div>',
+  });
+
   $('#slick-simple-slider').slick({
     dots: false,
     infinite: true,

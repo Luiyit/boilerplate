@@ -12,6 +12,10 @@
         'default' => 'All rights reserved',
         'type'    => 'theme_mod'
     ));
+    $wp_customize->add_setting('bt_contact_email', array(
+        'default' => '',
+        'type'    => 'theme_mod'
+    ));
     $wp_customize->add_setting('bt_ga_traking_id', array(
       'default' => '',
       'type'    => 'theme_mod'
@@ -38,6 +42,11 @@
         'label'   => 'Copyright text',
         'section' => 'theme_setup',
         'type'    => 'textarea',
+    ));
+    $wp_customize->add_control('bt_contact_email', array(
+        'label'   => 'Contact email',
+        'section' => 'theme_setup',
+        'type'    => 'text',
     ));
     $wp_customize->add_control('bt_ga_traking_id', array(
       'label'   => 'Google Analytics Tracking ID',

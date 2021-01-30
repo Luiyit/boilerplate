@@ -40,6 +40,7 @@ class StarterSite extends Timber\Site {
 			'copyright' => get_theme_mod('bt_copyright'),
 			'gaTrakingId' => get_theme_mod('bt_ga_traking_id'),
 			'instagramUrl' => get_theme_mod('bt_instagram'),
+			'contactEmail' => get_theme_mod('bt_contact_email'),
 			'facebookUrl' => get_theme_mod('bt_facebook'),
 			'twitterUrl' => get_theme_mod('bt_twitter'),
 			'youtubeUrl' => get_theme_mod('bt_youtube'),
